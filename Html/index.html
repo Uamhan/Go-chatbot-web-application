@@ -11,7 +11,8 @@
   </head>
   <body>
     <h1>ChatBot</h1>
-	<textarea rows="4" cols="50" id="outPut"></textarea>
+	<textarea rows="4" cols="50" id="outPut">Eliza: Hello, my name is Eliza, how are you today?
+</textarea>
 	<form id = "chatInput">
 	<input type ="text" id ="userInput">
 	<input type = "submit" value ="Send">
@@ -29,7 +30,11 @@
 	<script>
 	
 	$("#chatInput").submit(function(event){
-		event.preventDefault();
+		event.preventDefault(); // prevents default action of the submit button
+		//Ajax implementation 
+		//sends a request to our webApp.go with the users input
+		//prints user: followed by the users input and Chatbot: followed by the webApp.go response
+		//this gives us a live chat function without the need to refresh the page.
 		jQuery.get('/user-input', { value: $('#userInput').val() } ).done(function (data)
 			{
 				$('#outPut').append("User: " + $('#userInput').val()+'\n');

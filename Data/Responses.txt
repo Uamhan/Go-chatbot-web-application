@@ -225,6 +225,59 @@ How do you feel about your mother?
 How does this relate to your feelings today?
 Good family relations are important.
 
+# e.g. My job is hard.
+(?i)^.*\b(?:job|work)\b.*$
+Tell me more about your job.
+Is your job living up to you expectations?
+How do you feel when you are at work?
+If you could would you change profesion?
+
+# e.g. i study programing in college.
+(?i)^.*\bcollege\b.*$
+Do you enjoy college?
+How certain are you that your in the right Course?
+Whats your favorite thing about college?
+What do you feel when you think of college?
+Do you think you study enough to succeed?
+
+# e.g. i really enjoy listening to music while i work.
+(?i)^.*\b(?:music|song)\b.*$
+Whats your favorite genre of music and why?
+How do you feel when you listen to your favorite song?
+Would you say Listening to music makes you feel good?
+If i said i didn't like music what would you say?
+
+# e.g. i get very stressed in work
+(?i)^.*\b(?:stressed|stressful)\b.*$
+What do you do to relive stress?
+Have you ever tried gettiing a massage?
+I dont want you to be stressed you need to find a way to let loose.
+
+# e.g. i really need a holiday
+(?i)^.*\bholiday\b.*$
+If you could go anywhere where would it be?
+What was your most memorable holiday?
+Why dont you you treat yourself to a holiday?
+how do you feel about traveling by airplane?
+
+# e.g. i read alot
+(?i)^.*\bread\b.*$
+Do you have a favorite book?
+Do you read often?
+Would you say you feel relaxed when you read?
+
+# e.g. i dont really follow politics
+(?i)^.*\bpolitics\b.*$
+How do you feel when you think of our current president?
+Do you often discuss politics?
+Do you feel our current government is doing a good job?
+
+# e.g. My brother is a bad person.
+(?i)^.*\b(?:brother|sister)\b.*$
+Do you Like your siblings?
+I'm an only child do you think its better to have siblings?
+How dose your family make you feel?
+
 # e.g. My father is a doctor.
 (?i)^.*\bfather\b.*$
 Tell me more about your father.
@@ -258,9 +311,14 @@ Why don't you tell me?
 ^([^.!?]*)[.!?]?.*$
 Please tell me more.
 Let's change focus a bit... Tell me about your family.
+Interesting do you have a job?
+I see. Do you regularly listen to music?
+Ok now Tell me what makes you happy?
+hmm.. how was your childhood?
+i think this might have to have a deeper cause, describe your father.
+i see, would you say in general that you are stressed?
 Can you elaborate on that?
 Why do you say that $1?
-I see.
 Very interesting, do go on.
 $1?
 I see. And what does that tell you?

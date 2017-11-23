@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Eliza</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Elizas Office</h1>
+	<textarea rows="4" cols="50" id="outPut">Eliza: Hello, my name is Eliza, how are you today?
+</textarea>
+	<form id = "chatInput">
+	<input type ="text" id ="userInput">
+	<input type = "submit" value ="Send">
+	</form>
+	
+	
+	
+	
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	
+	<script>
+	
+	$("#chatInput").submit(function(event){
+		event.preventDefault(); // prevents default action of the submit button
+		//Ajax implementation 
+		//sends a request to our webApp.go with the users input
+		//prints user: followed by the users input and Chatbot: followed by the webApp.go response
+		//this gives us a live chat function without the need to refresh the page.
+		jQuery.get('/user-input', { value: $('#userInput').val() } ).done(function (data)
+			{
+				$('#outPut').append("User: " + $('#userInput').val()+'\n');
+				$('#outPut').append("Eliza: "+data+'\n');
+            })
+	});
+	
+	</script>
+  
+  </body>
+</html>
